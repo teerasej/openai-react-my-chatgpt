@@ -1,24 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <h1>MyGPT</h1>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <div className="chatroom"></div>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Form>
+            <Form.Group controlId="message">
+              <Form.Label>Message</Form.Label>
+              <Form.Control type="text" placeholder="Type your message here" />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Send
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
