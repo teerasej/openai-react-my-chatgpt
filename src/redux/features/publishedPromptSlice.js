@@ -9,9 +9,13 @@ const initialState = [
 const publishedPromptSlice = createSlice({
   name: 'publishedPrompts',
   initialState,
-  reducers: {}
+  reducers: {
+    promptAdded(state, action) {
+      state.push(action.payload)
+    },
+  }
 });
 
-export const {} = publishedPromptSlice.actions
+export const { promptAdded } = publishedPromptSlice.actions
 
 export default publishedPromptSlice.reducer
