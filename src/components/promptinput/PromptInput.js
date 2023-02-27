@@ -6,7 +6,7 @@ import { promptAdded } from '../../redux/features/publishedPromptSlice';
 
 function PromptInput() {
 
-  const { control, handleSubmit } = useForm();
+  const { control, handleSubmit, reset } = useForm();
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
@@ -17,6 +17,8 @@ function PromptInput() {
         message: data.message
       })
     )
+
+    reset();
   };
 
   return (
