@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { Controller, useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import { promptAdded } from '../../redux/features/publishedPromptSlice';
 
 function PromptInput() {
 
@@ -10,6 +11,12 @@ function PromptInput() {
 
   const onSubmit = (data) => {
     console.log(data);
+    dispatch(
+      promptAdded({
+        sender: 'User',
+        message: data.message
+      })
+    )
   };
 
   return (
