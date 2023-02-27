@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { Controller, useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { promptAdded } from '../../redux/features/publishedPromptSlice';
+import { fetchOpenAI, promptAdded } from '../../redux/features/publishedPromptSlice';
 
 function PromptInput() {
 
@@ -17,6 +17,8 @@ function PromptInput() {
         message: data.message
       })
     )
+
+    dispatch(fetchOpenAI(data.message))
 
     reset();
   };
